@@ -97,7 +97,6 @@ namespace MiniBars.Framework.Rendering
                 else if (_monster is Spiker) continue;
 
                 BarInformations _informations_holder = Compatibility.CheckCompatibleMonster(_monster);
-                Monitor.Log(_monster.Name, LogLevel.Warn);
                 if (_informations_holder != null)
                 {
                     _informations = _informations_holder;

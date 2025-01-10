@@ -5,6 +5,6 @@
   "Description": "A custom healthbar mod.",
   "UniqueID": "Coldopa.MiniBars",
   "EntryDll": "MiniBars.dll",
-  "MinimumApiVersion": "3.0.0",
+  "MinimumApiVersion": "4.0.0",
   "UpdateKeys": [ "Nexus:8329" ]
 }
