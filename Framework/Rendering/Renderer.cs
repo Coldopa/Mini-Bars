@@ -13,6 +13,7 @@ namespace MiniBars.Framework.Rendering
     public class Renderer
     {
         private static int _verification_range = 100 * Game1.pixelZoom;
+        private static IMonitor Monitor = ModEntry.instance.Monitor;
 
         public static void OnRendered(object sender, RenderedWorldEventArgs e)
         {
@@ -94,6 +95,13 @@ namespace MiniBars.Framework.Rendering
                 if (_monster is RockCrab && _monster.Sprite.CurrentFrame % 4 == 0) continue;
                 else if (_monster is RockGolem && _monster.Sprite.CurrentFrame == 16) continue;
                 else if (_monster is Spiker) continue;
+
+                BarInformations _informations_holder = Compatibility.CheckCompatibleMonster(_monster);
+                Monitor.Log(_monster.Name, LogLevel.Warn);
+                if (_informations_holder != null)
+                {
+                    _informations = _informations_holder;
+                }
 
                 Texture2D _current_sprite = _informations.texture;
                 Color _bar_color = _informations.barColor;
